@@ -16,7 +16,7 @@ class YearDropdown extends React.Component {
   render() {
 
     const activeYear = this.props.activeYear;
-    const years = Array.from({length: (2025 - 2000)}, (v, k) => k + 2000);
+    const years = Array.from({length: 50}, (v, k) => k + 1980);
 
     return (
       <select name="years" value={activeYear} onChange={this.handleChange}>

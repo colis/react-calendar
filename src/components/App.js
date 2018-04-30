@@ -35,22 +35,22 @@ class App extends React.Component {
   }
 
   goToPrevMonth = () => {
-    const { month, year } = { ...this.state };
+    const { month, year } = this.state;
     this.goToYearMonth(getPrevMonth(month, year));
   }
 
   goToNextMonth = () => {
-    const { month, year } = { ...this.state };
+    const { month, year } = this.state;
     this.goToYearMonth(getNextMonth(month, year));
   }
 
   changeMonth = (selectedMonth) => {
-    const { year } = { ...this.state };
+    const { year } = this.state;
     this.goToYearMonth({ month: selectedMonth, year });
   }
 
   changeYear = (selectedYear) => {
-    const { month } = { ...this.state };
+    const { month } = this.state;
     this.goToYearMonth({ month, year: selectedYear });
   }
 
