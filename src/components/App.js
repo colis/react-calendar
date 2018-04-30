@@ -45,12 +45,12 @@ class App extends React.Component {
   }
 
   changeMonth = (selectedMonth) => {
-    const { month, year } = { ...this.state };
+    const { year } = { ...this.state };
     this.goToYearMonth({ month: selectedMonth, year });
   }
 
   changeYear = (selectedYear) => {
-    const { month, year } = { ...this.state };
+    const { month } = { ...this.state };
     this.goToYearMonth({ month, year: selectedYear });
   }
 
