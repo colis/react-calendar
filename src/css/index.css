@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 20px 0;
+    font-family: sans-serif;
+}
+
+#root {
+    width: calc(100% - 10%);
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar {
+    box-shadow: 0 0 40px 0 rgba(16, 36, 94, 0.2);
+    border-radius: 4px;
+    max-width: 100%;
+    border: 0;
+    overflow: hidden;
+    width: 500px;
+}
+
+.navigation {
+    display: flex;
+    height: 44px;
+    margin-bottom: 1em;
+}
+
+.navigation select {
+    margin: 14px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.navigation button {
+    min-width: 44px;
+    background: none;
+    margin: 0;
+    border: 0;
+    outline: none;
+    flex-grow: 1;
+}
+
+.navigation button:hover {
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+.calendar-view .day {
+    width: calc(100%/7);
+    border: 0;
+    height: 44px;
+}
+
+.calendar-view .day.today {
+    background-color: #006edc;
+    color: #ffffff;
+    outline: none;
+}
+
+.calendar-view .day:hover:not(.today) {
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+.calendar-view .day:focus:not(.today) {
+    background-color: #e6e6e6;
+    outline: none;
+}
+
+.calendar-view .day.not-active {
+    color: #bdbdbd;
+}
+
+.calendar-view .day.not-active.weekend {
+    color: #ffa6a6;
+}
+
+.calendar-view .day.weekend {
+    color: red;
+}
+
+.weekdays {
+    display: flex;
+}
+
+.weekday {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .75em;
+    padding: 1em;
+    flex-grow: 1;
+}
