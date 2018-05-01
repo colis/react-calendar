@@ -8,30 +8,16 @@ export const getCurrentDate = () => {
 }
 
 export const getNextMonth = (month, year) => {
-  if(month == 12) {
-    return {
-      month: 1,
-      year: year + 1
-    }
-  }
-
   return {
-    month: month + 1,
-    year
+    month: month == 12 ? 1 : month + 1,
+    year: month == 12 ? year + 1 : year
   }
 }
 
 export const getPrevMonth = (month, year) => {
-  if(month == 1) {
-    return {
-      month: 12,
-      year: year - 1
-    }
-  }
-
   return {
-    month: month - 1,
-    year
+    month: month == 1 ? 12 : month - 1,
+    year: month == 1 ? year - 1 : year
   }
 }
 
@@ -101,5 +87,5 @@ export const getNextMonthDays = (nextMonth, maybeNextYear, length) => {
 export const isToday = (dateTime) => {
   var today = new Date();
   today.setHours(0,0,0,0);
-  return today.getTime() == dateTime.getTime();  
+  return today.getTime() == dateTime.getTime();
 }
