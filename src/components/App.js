@@ -4,13 +4,24 @@ import PropTypes from 'prop-types';
 import {
   getCurrentDate,
   getNextMonth,
-  getPrevMonth
+  getPrevMonth,
 } from '../helpers';
 
 import Navigation from './Navigation';
 import Calendar from './Calendar';
 
 class App extends React.Component {
+  static propTypes = {
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        month: PropTypes.string,
+        year: PropTypes.string,
+      }).isRequired,
+    }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func,
+    }).isRequired,
+  };
 
   constructor(props) {
     super(props);
@@ -19,15 +30,10 @@ class App extends React.Component {
     const { month, year } = getCurrentDate();
 
     this.state = {
-      month: parseInt(params.month) || month,
-      year: parseInt(params.year) || year
+      month: parseInt(params.month, 10) || month,
+      year: parseInt(params.year, 10) || year,
     };
   }
-
-  static propTypes = {
-    match: PropTypes.object,
-    history: PropTypes.object
-  };
 
   goToYearMonth = ({ month, year }) => {
     this.setState({ month, year });

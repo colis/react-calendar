@@ -1,9 +1,7 @@
 import React from 'react';
 
 class WeekdaysHeader extends React.Component {
-
   render() {
-
     const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
     return (

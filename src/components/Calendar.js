@@ -7,10 +7,9 @@ import Day from './Day';
 import { getDays } from '../helpers';
 
 class Calendar extends React.Component {
-
   static propTypes = {
-    activeMonth: PropTypes.number,
-    activeYear: PropTypes.number
+    activeMonth: PropTypes.number.isRequired,
+    activeYear: PropTypes.number.isRequired,
   };
 
   render() {
@@ -24,7 +23,7 @@ class Calendar extends React.Component {
             key={day}
             datetime={day}
             day={day.getDate()}
-            month={day.getMonth()+1}
+            month={day.getMonth() + 1}
             currentMonth={this.props.activeMonth}
             weekDay={day.getDay()}
           />

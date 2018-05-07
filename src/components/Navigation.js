@@ -5,14 +5,13 @@ import MonthDropdown from './MonthDropdown';
 import YearDropdown from './YearDropdown';
 
 class Navigation extends React.Component {
-
   static propTypes = {
-    goToPrevMonth: PropTypes.func,
-    goToNextMonth: PropTypes.func,
-    changeMonth: PropTypes.func,
-    changeYear: PropTypes.func,
-    activeMonth: PropTypes.number,
-    activeYear: PropTypes.number
+    goToPrevMonth: PropTypes.func.isRequired,
+    goToNextMonth: PropTypes.func.isRequired,
+    changeMonth: PropTypes.func.isRequired,
+    changeYear: PropTypes.func.isRequired,
+    activeMonth: PropTypes.number.isRequired,
+    activeYear: PropTypes.number.isRequired,
   };
 
   render() {

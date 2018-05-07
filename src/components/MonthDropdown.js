@@ -4,20 +4,18 @@ import PropTypes from 'prop-types';
 import { getMonths } from '../helpers';
 
 class MonthDropdown extends React.Component {
-
   static propTypes = {
-    activeMonth: PropTypes.number,
-    changeMonth: PropTypes.func,
+    activeMonth: PropTypes.number.isRequired,
+    changeMonth: PropTypes.func.isRequired,
   };
 
   handleChange = (event) => {
-    const selectedMonth = parseInt(event.currentTarget.value);
+    const selectedMonth = parseInt(event.currentTarget.value, 10);
     this.props.changeMonth(selectedMonth);
   }
 
   render() {
-
-    const activeMonth = this.props.activeMonth;
+    const { activeMonth } = this.props;
     const months = getMonths();
 
     return (

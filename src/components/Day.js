@@ -5,21 +5,20 @@ import cx from 'classnames';
 import { isToday } from '../helpers';
 
 class Day extends React.Component {
-
   static propTypes = {
-    datetime: PropTypes.instanceOf(Date),
-    day: PropTypes.number,
-    month: PropTypes.number,
-    currentMonth: PropTypes.number,
-    weekDay: PropTypes.number
+    datetime: PropTypes.instanceOf(Date).isRequired,
+    day: PropTypes.number.isRequired,
+    month: PropTypes.number.isRequired,
+    currentMonth: PropTypes.number.isRequired,
+    weekDay: PropTypes.number.isRequired,
   };
 
   render() {
-    let className = cx({
-      'day': true,
-      'today': isToday(this.props.datetime),
-      'not-active': this.props.month != this.props.currentMonth,
-      'weekend': this.props.weekDay == 0 || this.props.weekDay == 6
+    const className = cx({
+      day: true,
+      today: isToday(this.props.datetime),
+      'not-active': this.props.month !== this.props.currentMonth,
+      weekend: this.props.weekDay === 0 || this.props.weekDay === 6,
     });
 
     return (
